@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IVOIREFOOT MARKET — La référence du football ivoirien</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#071426;
+  --navy-2:#0d2038;
+  --navy-3:#122c4a;
+  --orange:#F58220;
+  --green:#087443;
+  --white:#ffffff;
+  --gray:#F4F6F8;
+  --gray-line:#E2E7ED;
+  --muted:#6E7B90;
+  --muted-dark:#9FB0C6;
+  --radius:6px;
+  --font-display:'Rajdhani',sans-serif;
+  --font-body:'Inter',sans-serif;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:var(--font-body);color:var(--navy);background:var(--gray);}
+h1,h2,h3,h4{font-family:var(--font-display);margin:0;letter-spacing:.2px;}
+p{margin:0;}
+a{color:inherit;text-decoration:none;}
+button{font-family:var(--font-body);cursor:pointer;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+.hidden{display:none !important;}
+
+/* ---------- NAV ---------- */
+#topbar{background:var(--navy);color:var(--white);font-size:12.5px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+#topbar .wrap{display:flex;justify-content:space-between;color:var(--muted-dark);}
+#topbar strong{color:var(--orange);}
+
+nav#mainnav{position:sticky;top:0;z-index:50;background:var(--navy);box-shadow:0 2px 14px rgba(0,0,0,.25);}
+nav#mainnav .wrap{display:flex;align-items:center;gap:22px;height:62px;}
+.brand{display:flex;align-items:baseline;gap:6px;flex-shrink:0;cursor:pointer;}
+.brand .b1{font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--white);letter-spacing:.5px;}
+.brand .b2{font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--orange);letter-spacing:.5px;}
+.brand .b3{width:8px;height:8px;background:var(--green);border-radius:50%;margin-left:2px;}
+#navlinks{display:flex;gap:2px;flex:1;overflow-x:auto;scrollbar-width:none;}
+#navlinks::-webkit-scrollbar{display:none;}
+#navlinks button{background:none;border:none;color:var(--muted-dark);font-size:14px;padding:10px 11px;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;}
+#navlinks button:hover{color:var(--white);}
+#navlinks button.active{color:var(--white);border-bottom-color:var(--orange);}
+.navactions{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.iconbtn{background:none;border:1px solid rgba(255,255,255,.2);color:var(--white);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;}
+.iconbtn:hover{border-color:var(--orange);color:var(--orange);}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:var(--radius);font-size:14px;font-weight:600;border:none;}
+.btn-orange{background:var(--orange);color:var(--white);}
+.btn-orange:hover{background:#e0730f;}
+.btn-outline{background:transparent;border:1px solid var(--gray-line);color:var(--navy);}
+.btn-outline:hover{border-color:var(--navy);}
+.btn-ghost-light{background:transparent;border:1px solid rgba(255,255,255,.3);color:var(--white);}
+.btn-ghost-light:hover{border-color:var(--orange);color:var(--orange);}
+.btn-sm{padding:6px 12px;font-size:13px;}
+
+/* ---------- HERO ---------- */
+#hero{background:radial-gradient(ellipse 900px 500px at 20% -10%, #143a63 0%, var(--navy) 55%),var(--navy);color:var(--white);padding:64px 0 46px;position:relative;overflow:hidden;border-bottom:4px solid var(--green);}
+#hero::after{content:"";position:absolute;right:-120px;top:-60px;width:420px;height:420px;border:2px solid rgba(245,130,32,.12);border-radius:50%;}
+#hero .inner{position:relative;z-index:2;max-width:760px;}
+.eyebrow{display:inline-block;color:var(--orange);font-weight:600;font-size:13px;margin-bottom:14px;}
+#hero h1{font-size:52px;line-height:1;font-weight:700;}
+#hero h1 span{color:var(--orange);}
+#hero .lead{margin-top:16px;font-size:17px;color:var(--muted-dark);max-width:560px;line-height:1.55;}
+.searchbar{margin-top:30px;display:flex;background:var(--white);border-radius:var(--radius);overflow:hidden;max-width:560px;box-shadow:0 12px 30px rgba(0,0,0,.35);}
+.searchbar input{flex:1;border:none;padding:15px 18px;font-size:15px;font-family:var(--font-body);outline:none;color:var(--navy);}
+.searchbar button{background:var(--orange);border:none;color:var(--white);padding:0 22px;font-weight:600;font-size:14px;}
+
+.statgrid{margin-top:44px;display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(255,255,255,.1);border-radius:var(--radius);overflow:hidden;}
+.statcell{background:var(--navy-2);padding:20px 14px;text-align:center;}
+.statcell b{display:block;font-family:var(--font-display);font-size:30px;color:var(--orange);}
+.statcell span{display:block;font-size:12px;color:var(--muted-dark);margin-top:4px;}
+@media(max-width:900px){.statgrid{grid-template-columns:repeat(3,1fr);} #hero h1{font-size:38px;}}
+@media(max-width:600px){.statgrid{grid-template-columns:repeat(2,1fr);}}
+
+/* ---------- SECTION GENERIC ---------- */
+.section{padding:52px 0;}
+.section.alt{background:var(--white);}
+.sechead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:26px;gap:20px;flex-wrap:wrap;}
+.sechead h2{font-size:30px;}
+.sechead .sub{color:var(--muted);font-size:14px;margin-top:4px;}
+.pill{display:inline-block;padding:2px 10px;border-radius:20px;font-size:11.5px;font-weight:600;}
+.pill-green{background:rgba(8,116,67,.1);color:var(--green);}
+.pill-orange{background:rgba(245,130,32,.12);color:var(--orange);}
+.pill-navy{background:rgba(7,20,38,.08);color:var(--navy);}
+
+/* filter bar */
+.filterbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;background:var(--white);padding:14px;border:1px solid var(--gray-line);border-radius:var(--radius);}
+.filterbar select,.filterbar input{padding:9px 10px;border:1px solid var(--gray-line);border-radius:4px;font-size:13.5px;font-family:var(--font-body);background:var(--white);color:var(--navy);}
+.filterbar input{flex:1;min-width:160px;}
+
+/* grid cards */
+.grid{display:grid;gap:18px;}
+.grid.cols4{grid-template-columns:repeat(4,1fr);}
+.grid.cols3{grid-template-columns:repeat(3,1fr);}
+.grid.cols2{grid-template-columns:repeat(2,1fr);}
+@media(max-width:1000px){.grid.cols4{grid-template-columns:repeat(2,1fr);}.grid.cols3{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.grid.cols4,.grid.cols3,.grid.cols2{grid-template-columns:1fr;} .statgrid{grid-template-columns:repeat(2,1fr);}}
+
+.card{background:var(--white);border:1px solid var(--gray-line);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:transform .12s,box-shadow .12s;}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(7,20,38,.12);}
+
+/* player card */
+.playercard .photo{height:120px;background:linear-gradient(160deg,var(--navy-3),var(--navy));display:flex;align-items:center;justify-content:center;position:relative;}
+.playercard .photo .num{font-family:var(--font-display);font-size:44px;color:rgba(255,255,255,.18);font-weight:700;}
+.playercard .badge{position:absolute;top:8px;left:8px;}
+.playercard .body{padding:12px 14px;border-top:3px solid var(--orange);}
+.playercard h4{font-size:15.5px;}
+.playercard .meta{font-size:12.5px;color:var(--muted);margin-top:3px;}
+.playercard .stats{display:flex;gap:10px;margin-top:10px;font-size:12px;color:var(--navy);}
+.playercard .stats b{display:block;font-family:var(--font-display);font-size:16px;color:var(--green);}
+
+/* club card */
+.clubcard{padding:16px;display:flex;flex-direction:column;gap:10px;border-top:3px solid var(--green);}
+.crest{width:46px;height:46px;border-radius:50%;background:var(--navy);color:var(--orange);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:16px;}
+.clubcard h4{font-size:15.5px;}
+.clubcard .meta{font-size:12.5px;color:var(--muted);}
+
+/* competition card */
+.competcard{padding:18px;border-left:4px solid var(--navy);display:flex;flex-direction:column;gap:8px;}
+.competcard h4{font-size:16px;}
+
+/* generic list rows */
+.rowlist{background:var(--white);border:1px solid var(--gray-line);border-radius:var(--radius);overflow:hidden;}
+.rowitem{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--gray-line);font-size:13.5px;gap:12px;flex-wrap:wrap;}
+.rowitem:last-child{border-bottom:none;}
+.rowitem:hover{background:var(--gray);}
+
+/* transfer row */
+.tflow{display:flex;align-items:center;gap:8px;font-weight:600;font-size:13.5px;}
+.tflow .arrow{color:var(--orange);}
+
+/* table */
+table.stdtable{width:100%;border-collapse:collapse;background:var(--white);font-size:13.5px;}
+table.stdtable th{background:var(--navy);color:var(--white);font-weight:600;padding:10px 8px;text-align:center;font-size:12px;}
+table.stdtable th:first-child,table.stdtable td:first-child{text-align:left;padding-left:14px;}
+table.stdtable td{padding:9px 8px;text-align:center;border-bottom:1px solid var(--gray-line);}
+table.stdtable tr:nth-child(-n+2) td:first-child{border-left:3px solid var(--green);}
+table.stdtable tbody tr:hover{background:var(--gray);}
+.postxt{color:var(--muted);width:22px;display:inline-block;}
+
+/* results / matches */
+.matchcard{background:var(--white);border:1px solid var(--gray-line);border-radius:var(--radius);padding:14px 18px;}
+.matchcard .comp{font-size:11.5px;color:var(--muted);margin-bottom:8px;}
+.matchrow{display:flex;align-items:center;justify-content:space-between;}
+.matchteam{flex:1;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;}
+.matchteam.right{justify-content:flex-end;text-align:right;}
+.score{font-family:var(--font-display);font-weight:700;font-size:22px;background:var(--navy);color:var(--white);padding:4px 14px;border-radius:4px;margin:0 12px;}
+.matchmeta{margin-top:8px;font-size:12px;color:var(--muted);}
+
+/* article */
+.artcard{padding:0;}
+.artcard .thumb{height:130px;background:linear-gradient(140deg,var(--green),var(--navy));position:relative;}
+.artcard .thumb .cat{position:absolute;bottom:8px;left:10px;}
+.artcard .body{padding:14px;}
+.artcard h4{font-size:15px;line-height:1.3;}
+.artcard .meta{font-size:11.5px;color:var(--muted);margin-top:8px;}
+
+/* stat bars */
+.statbarrow{display:flex;align-items:center;gap:10px;font-size:13px;margin-bottom:10px;}
+.statbarrow .name{width:150px;flex-shrink:0;}
+.statbarrow .track{flex:1;background:var(--gray-line);height:9px;border-radius:6px;overflow:hidden;}
+.statbarrow .fill{height:100%;background:var(--orange);}
+.statbarrow .val{width:26px;text-align:right;font-weight:700;font-family:var(--font-display);color:var(--green);}
+
+/* talent card */
+.talentcard{position:relative;border-top:3px solid var(--orange);}
+.talentbadge{position:absolute;top:8px;right:8px;font-size:10.5px;font-weight:700;background:var(--orange);color:#fff;padding:3px 8px;border-radius:3px;}
+
+/* centre card */
+.centrecard{padding:16px;border-top:3px solid var(--navy);}
+
+/* footer */
+footer{background:var(--navy);color:var(--muted-dark);padding:40px 0 20px;font-size:13.5px;margin-top:20px;}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px;}
+footer h5{color:var(--white);font-size:14px;margin-bottom:10px;font-family:var(--font-body);font-weight:600;}
+footer a{display:block;color:var(--muted-dark);padding:3px 0;font-size:13px;}
+footer a:hover{color:var(--orange);}
+.footbottom{margin-top:26px;border-top:1px solid rgba(255,255,255,.08);padding-top:16px;font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+@media(max-width:800px){footer .cols{grid-template-columns:1fr 1fr;}}
+
+/* modal */
+.overlay{position:fixed;inset:0;background:rgba(4,10,20,.6);z-index:200;display:flex;align-items:flex-start;justify-content:center;padding:40px 16px;overflow:auto;}
+.modal{background:var(--white);border-radius:var(--radius);max-width:760px;width:100%;overflow:hidden;}
+.modal-head{background:var(--navy);color:#fff;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;}
+.modal-head h3{font-size:20px;}
+.modal-head button{background:none;border:none;color:#fff;font-size:22px;line-height:1;}
+.modal-body{padding:22px;max-height:75vh;overflow:auto;}
+.small-modal .modal{max-width:420px;}
+.infogrid{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;margin-top:8px;font-size:14px;}
+.infogrid .k{color:var(--muted);font-size:12px;}
+.infogrid .v{font-weight:600;}
+.formfield{margin-bottom:14px;}
+.formfield label{display:block;font-size:12.5px;color:var(--muted);margin-bottom:5px;font-weight:600;}
+.formfield input,.formfield select{width:100%;padding:10px 12px;border:1px solid var(--gray-line);border-radius:4px;font-size:14px;font-family:var(--font-body);}
+.msgbox{padding:10px 12px;border-radius:4px;font-size:13px;margin-top:10px;}
+.msgbox.ok{background:rgba(8,116,67,.1);color:var(--green);}
+.msgbox.err{background:rgba(200,40,40,.1);color:#c22828;}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--gray-line);margin-bottom:16px;}
+.tabs button{background:none;border:none;padding:9px 14px;font-size:13.5px;font-weight:600;color:var(--muted);border-bottom:2px solid transparent;}
+.tabs button.active{color:var(--navy);border-bottom-color:var(--orange);}
+.empty{padding:40px 20px;text-align:center;color:var(--muted);}
+.empty b{display:block;color:var(--navy);font-size:16px;margin-bottom:6px;}
+
+/* admin */
+.adminlayout{display:grid;grid-template-columns:220px 1fr;gap:0;background:var(--white);border:1px solid var(--gray-line);border-radius:var(--radius);overflow:hidden;min-height:520px;}
+.adminmenu{background:var(--navy-2);padding:14px 0;}
+.adminmenu button{display:block;width:100%;text-align:left;background:none;border:none;color:var(--muted-dark);padding:11px 20px;font-size:13.5px;border-left:3px solid transparent;}
+.adminmenu button.active{color:#fff;border-left-color:var(--orange);background:rgba(255,255,255,.04);}
+.adminpane{padding:22px;}
+.adminpane h3{font-size:19px;margin-bottom:14px;}
+.admintable{width:100%;border-collapse:collapse;font-size:13px;}
+.admintable th{text-align:left;padding:8px;border-bottom:2px solid var(--gray-line);color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.4px;}
+.admintable td{padding:8px;border-bottom:1px solid var(--gray-line);}
+.admintable button{background:none;border:none;color:var(--navy);font-size:12.5px;margin-right:8px;text-decoration:underline;}
+.admintable button.del{color:#c22828;}
+.gate{text-align:center;padding:60px 20px;}
+.gate .lockicon{font-size:40px;margin-bottom:14px;}
+.badgeverif{color:var(--green);font-size:12px;font-weight:700;}
+
+.roleSwitchBar{display:flex;align-items:center;gap:10px;justify-content:flex-end;margin-bottom:16px;font-size:13px;color:var(--muted);}
+.roleSwitchBar select{padding:6px 10px;border:1px solid var(--gray-line);border-radius:4px;}
+
+.demo-note{background:#FFF7EC;border:1px solid #F7D9A8;color:#8a5a10;font-size:12.5px;padding:8px 12px;border-radius:4px;margin-bottom:18px;}
+/* Règle demandée pour masquer le badge Netlify — sans effet réel :
+   le badge est rendu dans une iframe cross-origin isolée par Netlify,
+   que le CSS de cette page ne peut pas atteindre. */
+[href*="netlify"] { display: none !important; }
+</style>
+</head>
+<body>
+
+<div id="topbar"><div class="wrap"><span>Édition <strong>Saison 2025-2026</strong> · Données de démonstration</span><span>Abidjan, Côte d'Ivoire</span></div></div>
+
+<nav id="mainnav">
+  <div class="wrap">
+    <div class="brand" onclick="goSection('accueil')"><span class="b1">IVOIRE<span class="b2">FOOT</span></span><span class="b3"></span><span class="b1" style="font-size:13px;color:#9FB0C6;font-weight:500;margin-left:2px;">MARKET</span></div>
+    <div id="navlinks"></div>
+    <div class="navactions">
+      <button class="iconbtn" title="Recherche" onclick="goSection('recherche')">⌕</button>
+      <button class="btn btn-ghost-light btn-sm" onclick="openAuth('login')">Se connecter</button>
+    </div>
+  </div>
+</nav>
+
+<main id="app"></main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h5>IVOIREFOOT MARKET</h5>
+        <p style="max-width:280px;line-height:1.6;color:#9FB0C6;">La référence du football ivoirien — joueurs, clubs, compétitions, transferts et centres de formation, du professionnel aux districts.</p>
+      </div>
+      <div><h5>Plateforme</h5>
+        <a onclick="goSection('joueurs')">Joueurs</a><a onclick="goSection('clubs')">Clubs</a><a onclick="goSection('competitions')">Compétitions</a><a onclick="goSection('transferts')">Transferts</a>
+      </div>
+      <div><h5>Ressources</h5>
+        <a onclick="goSection('centres')">Centres de formation</a><a onclick="goSection('talents')">Jeunes talents</a><a onclick="goSection('actualites')">Actualités</a><a onclick="goSection('statistiques')">Statistiques</a>
+      </div>
+      <div><h5>Compte</h5>
+        <a onclick="openAuth('login')">Connexion</a><a onclick="openAuth('register')">Inscription</a><a onclick="goSection('admin')">Espace administration</a>
+      </div>
+    </div>
+    <div class="footbottom"><span>© 2026 IVOIREFOOT MARKET — Toutes les données affichées sont fictives et à but de démonstration.</span><span>Fait en Côte d'Ivoire 🇨🇮</span></div>
+  </div>
+</footer>
+
+<div id="modalRoot"></div>
+
+<script>
+/* =========================================================
+   DONNÉES
+   ========================================================= */
+const POSITIONS = ["Gardien","Défenseur central","Latéral droit","Latéral gauche","Milieu défensif","Milieu central","Milieu offensif","Ailier droit","Ailier gauche","Attaquant"];
+const NATIONS = ["Côte d'Ivoire","Côte d'Ivoire","Côte d'Ivoire","Côte d'Ivoire","Mali","Burkina Faso","Ghana","France","Guinée","Sénégal"];
+const VILLES = ["Abidjan","Bouaké","Yamoussoukro","San-Pédro","Korhogo","Daloa","Gagnoa","Divo","Man","Abengourou"];
+
+const CLUB_RAW = [
+ ["AFAD Djékanou","Abidjan / Djékanou","Ligue 1",""],
+ ["AS Denguélé","Odienné","Ligue 1",""],
+ ["ASEC Mimosas","Abidjan","Ligue 1",""],
+ ["Bouaké FC","Bouaké","Ligue 1",""],
+ ["CO Korhogo","Korhogo","Ligue 1",""],
+ ["ES Agboville","Agboville","Ligue 1",""],
+ ["FC San-Pédro","San-Pédro","Ligue 1",""],
+ ["Mouna FC","Akoupé","Ligue 1",""],
+ ["OSA - Olympic Sport d'Abobo","Abobo","Ligue 1",""],
+ ["Racing Club d'Abidjan","Abidjan","Ligue 1",""],
+ ["SOA - Société Omnisports de l'Armée","Yamoussoukro / Abidjan","Ligue 1",""],
+ ["SOL FC","Abobo","Ligue 1",""],
+ ["Stade d'Abidjan","Abidjan","Ligue 1",""],
+ ["Stella Club d'Adjamé","Abidjan","Ligue 1",""],
+ ["US Tchologo","Ferkessédougou","Ligue 1",""],
+ ["Zoman FC","Abidjan","Ligue 1",""],
+ ["2 Plateau FC","Abidjan","Ligue 2","A"],
+ ["AGIR FC","Abidjan","Ligue 2","A"],
+ ["AS Divo","Divo","Ligue 2","A"],
+ ["AS Tanda","Tanda","Ligue 2","A"],
+ ["CO Bouaflé","Bouaflé","Ligue 2","A"],
+ ["Donkoff FC","Abidjan","Ligue 2","A"],
+ ["EFYM","Abidjan","Ligue 2","A"],
+ ["JAC d'Angré","Angré","Ligue 2","A"],
+ ["Lanfiara Sport","Abidjan","Ligue 2","A"],
+ ["LYS Sassandra FC","Sassandra","Ligue 2","A"],
+ ["OFC Adiaké","Adiaké","Ligue 2","A"],
+ ["Séwé Sport","San-Pédro","Ligue 2","A"],
+ ["US Fermiers","Agnibilékrou","Ligue 2","A"],
+ ["WAC","Williamsville","Ligue 2","A"],
+ ["Africa Sports d'Abidjan","Abidjan","Ligue 2","B"],
+ ["AS Denguélé (rés.)","Odienné","Ligue 2","B"],
+ ["ASI d'Abengourou","Abengourou","Ligue 2","B"],
+ ["Atlantis FC de Dimbokro","Dimbokro","Ligue 2","B"],
+ ["ES Bafing","Touba / Abidjan","Ligue 2","B"],
+ ["ES Bingerville","Bingerville","Ligue 2","B"],
+ ["Espérance d'Issia","Issia","Ligue 2","B"],
+ ["Issia Wazi","Issia","Ligue 2","B"],
+ ["Leader Sporting Club Marcory","Marcory","Ligue 2","B"],
+ ["Nour FC de San Pedro","San-Pédro","Ligue 2","B"],
+ ["RFC Aboisso","Aboisso","Ligue 2","B"],
+ ["SC Gagnoa","Gagnoa","Ligue 2","B"],
+ ["Sirocco FC","San-Pédro","Ligue 2","B"],
+ ["Yamoussoukro FC","Yamoussoukro","Ligue 2","B"],
+ ["CASY Foot FC","Abidjan","Division 3","A"],
+ ["A.S. Athletic","Abidjan","Division 3","A"],
+ ["C.O. Monajoce","Abidjan","Division 3","A"],
+ ["Cosmos FC","Abidjan","Division 3","A"],
+ ["FC Nafana","Odienné","Division 3","A"],
+ ["Ivoire Académie","Sol Béni","Division 3","A"],
+ ["Les Séraphins FC","Abidjan","Division 3","A"],
+ ["RC Koumassi","Koumassi","Division 3","A"],
+ ["Songon FC","Songon","Division 3","A"],
+ ["USC Bassam","Grand-Bassam","Division 3","A"],
+ ["Alliance de l'Indénié","Abengourou","Division 3","B"],
+ ["EDUS Aboisso","Aboisso","Division 3","B"],
+ ["Espoir de Koumassi","Koumassi","Division 3","B"],
+ ["JCA T.","Abidjan","Division 3","B"],
+ ["Leader Foot Académie","Marcory","Division 3","B"],
+ ["Sacraboutou Sport","Abidjan","Division 3","B"],
+ ["Satellite FC","Abidjan","Division 3","B"],
+ ["Schadrac FC","Abidjan","Division 3","B"],
+ ["Yopougon FC","Yopougon","Division 3","B"],
+ ["ESPEA","Abidjan","Division 3","B"],
+ ["Académie Tuo","Korhogo","Division 3","C"],
+ ["Arrogates Football Club","Bouaké","Division 3","C"],
+ ["ASC Bouaké","Bouaké","Division 3","C"],
+ ["Espérance FC Bouaké","Bouaké","Division 3","C"],
+ ["FC Bintanan","Bouaké","Division 3","C"],
+ ["ADFCA","Bouaké","Division 3","C"],
+ ["JAC Zuénoula","Zuénoula","Division 3","C"],
+ ["Max United FC","Bouaké","Division 3","C"],
+ ["OC Taabo","Taabo","Division 3","C"],
+ ["Réal d'Abobo","Abobo","Division 3","C"],
+ ["ASC Ouragahio","Ouragahio","Division 3","D"],
+ ["AS Lianes","Daloa","Division 3","D"],
+ ["G27 Football Club","Daloa","Division 3","D"],
+ ["Football Club Solidarité","Daloa","Division 3","D"],
+ ["Gbalet Sport","Daloa","Division 3","D"],
+ ["KAFAC","Daloa","Division 3","D"],
+ ["Marahoué FC","Bouaflé","Division 3","D"],
+ ["Réveil Club de Daloa","Daloa","Division 3","D"],
+ ["Siguilolo Football Club","Daloa","Division 3","D"],
+ ["Sugar FC de Borotou","Borotou","Division 3","D"]
+];
+
+const CLUBS = CLUB_RAW.map((c,i)=>({
+  id:'c'+i, name:c[0], city:c[1], division:c[2], poule:c[3],
+  stadium: ["Stade Municipal","Stade Robert Champroux","Stade de la Paix","Stade Amadou Gon Coulibaly","Stade Bouaké Omnisport","Stade Municipal de "+ (c[1].split(' / ')[0]||c[1])][i%6],
+  president: ["Kouadio N'Guessan","Yao Séka","Diallo Amadou","Koné Ibrahim","Bamba Aly","Traoré Fatoumata"][i%6],
+  coach: ["Serge Alain","Souleymane Diallo","Julien Kadjo","Michel Dussuyer Jr.","Kamagaté Vamara","Doh Charles"][i%6],
+  verified: i%3===0,
+  founded: 1955 + (i*3)%65,
+  palmares: (i%5===0) ? ["Champion Ligue 1 "+(2010+i%14), "Coupe de CI "+(2008+i%16)] : ["Aucun titre majeur référencé"],
+}));
+
+function seededRand(seed){let x=Math.sin(seed)*10000;return x-Math.floor(x);}
+
+const PRENOMS = ["Kouassi","Yao","Adama","Ibrahim","Franck","Serge","Aristide","Habib","Cheick","Jean-Marc","Sekou","Wilfried","Amara","Christ","Salif","Junior","Emmanuel","Boubacar","Didier","Gervais","Lassina","Souleymane","Bertin","Landry","Fousseni","Armand","Modeste","Zié","Ousmane","Prince"];
+const NOMS = ["Kouamé","Koné","Traoré","Bamba","Diomandé","Yeo","N'Guessan","Bakayoko","Ouattara","Coulibaly","Gbagbo","Diarrassouba","Kacou","Dosso","Zadi","Kra","Silué","Fofana","Aka","Doumbia","Sanogo","Toure","Kouadio","Meite","Angoua","Brou","Digbeu","Vamara","Adje","Camara"];
+
+const PLAYERS = [];
+for(let i=0;i<52;i++){
+  const club = CLUBS[i % 24]; // priorité aux clubs Ligue 1 / Ligue 2 A pour la visibilité
+  const pos = POSITIONS[i % POSITIONS.length];
+  const age = 17 + Math.floor(seededRand(i*3.1)*18);
+  const first = PRENOMS[i % PRENOMS.length];
+  const last = NOMS[(i*7+3) % NOMS.length];
+  PLAYERS.push({
+    id:'p'+i,
+    name:first+' '+last,
+    age, dob: (2026-age)+"-0"+(1+i%9)+"-1"+(i%9),
+    nation: NATIONS[i % NATIONS.length],
+    position: pos,
+    foot: i%3===0?"Gauche":(i%3===1?"Droit":"Ambidextre"),
+    height: 168 + (i*2)%28,
+    club: club.name, clubId: club.id,
+    oldClub: CLUBS[(i+11)%CLUBS.length].name,
+    number: (i*7)%29 + 1,
+    contractEnd: 2026 + (i%4),
+    value: (5 + (i*13)%180) * (pos==="Attaquant"?1.4:1) ,
+    apps: 10 + i%22, goals: pos==="Attaquant"?Math.floor(seededRand(i)*20):Math.floor(seededRand(i)*6),
+    assists: Math.floor(seededRand(i*1.7)*10),
+    yellow: Math.floor(seededRand(i*2.3)*8), red: i%17===0?1:0,
+    region: VILLES[i % VILLES.length],
+    talent: age<=20,
+    video: age<=20 && i%2===0
+  });
+}
+
+const COMPETITIONS = [
+  {id:'co0',name:"Ligue 1 Lonaci",type:"Championnat national",clubs:CLUBS.filter(c=>c.division==="Ligue 1")},
+  {id:'co1',name:"Ligue 2 — Poule A",type:"Championnat national (Ligue 2)",clubs:CLUBS.filter(c=>c.division==="Ligue 2"&&c.poule==="A")},
+  {id:'co1b',name:"Ligue 2 — Poule B",type:"Championnat national (Ligue 2)",clubs:CLUBS.filter(c=>c.division==="Ligue 2"&&c.poule==="B")},
+  {id:'co2',name:"Division 3 — Poule A",type:"Championnat national (Division 3)",clubs:CLUBS.filter(c=>c.division==="Division 3"&&c.poule==="A")},
+  {id:'co2b',name:"Division 3 — Poule B",type:"Championnat national (Division 3)",clubs:CLUBS.filter(c=>c.division==="Division 3"&&c.poule==="B")},
+  {id:'co2c',name:"Division 3 — Poule C",type:"Championnat national (Division 3)",clubs:CLUBS.filter(c=>c.division==="Division 3"&&c.poule==="C")},
+  {id:'co2d',name:"Division 3 — Poule D",type:"Championnat national (Division 3)",clubs:CLUBS.filter(c=>c.division==="Division 3"&&c.poule==="D")},
+  {id:'co3',name:"Coupe de Côte d'Ivoire",type:"Coupe nationale",clubs:CLUBS.slice(0,32)},
+  {id:'co4',name:"Super Coupe de Côte d'Ivoire",type:"Match unique",clubs:CLUBS.slice(0,2)},
+];
+// Compétitions à championnat (utilisées pour générer résultats/calendrier/classements) : Ligue 1 + les 2 poules de Ligue 2 + les 4 poules de Division 3
+const LEAGUE_COMPETITIONS = COMPETITIONS.filter(c=>['co0','co1','co1b','co2','co2b','co2c','co2d'].includes(c.id));
+
+function buildStandings(clubs){
+  return clubs.map((c,i)=>{
+    const mj = 14 + i%3;
+    const g = Math.max(0, 10 - i%8 - Math.floor(seededRand(i*4)*3));
+    const n = Math.floor(seededRand(i*5)*4);
+    const p = Math.max(0, mj-g-n);
+    const bp = g*2 + n + Math.floor(seededRand(i*6)*10);
+    const bc = p*2 + Math.floor(seededRand(i*7)*8);
+    return {club:c, mj, g, n, p, bp, bc, pts: g*3+n};
+  }).sort((a,b)=>b.pts-a.pts || (b.bp-b.bc)-(a.bp-a.bc));
+}
+
+const RESULTS = [];
+for(let i=0;i<20;i++){
+  const comp = LEAGUE_COMPETITIONS[i%LEAGUE_COMPETITIONS.length];
+  const home = comp.clubs[i % comp.clubs.length];
+  const away = comp.clubs[(i+5) % comp.clubs.length];
+  const hs = Math.floor(seededRand(i*8)*4), as = Math.floor(seededRand(i*9)*4);
+  RESULTS.push({id:'r'+i, comp:comp.name, home:home.name, away:away.name, hs, as, date:"2026-0"+(1+i%9)+"-1"+(i%9), stadium:home.stadium, scorers: hs+as>0? (PLAYERS[i%PLAYERS.length].name+" "+(45+i%40)+"’") : "—"});
+}
+
+const CALENDAR = [];
+for(let i=0;i<14;i++){
+  const comp = LEAGUE_COMPETITIONS[i%LEAGUE_COMPETITIONS.length];
+  const home = comp.clubs[(i+2) % comp.clubs.length];
+  const away = comp.clubs[(i+9) % comp.clubs.length];
+  CALENDAR.push({id:'ca'+i, comp:comp.name, home:home.name, away:away.name, date:"2026-1"+(0+i%2)+"-"+(String(10+i).padStart(2,'0')), time:(15+i%5)+":00", stadium:home.stadium});
+}
+
+const TRANSFERS = [];
+const TTYPES=["Transfert définitif","Prêt","Retour de prêt","Joueur libre","Fin de contrat"];
+for(let i=0;i<22;i++){
+  const pl = PLAYERS[i];
+  const type = TTYPES[i%TTYPES.length];
+  TRANSFERS.push({id:'t'+i, player:pl.name, from: i%2===0?pl.oldClub:pl.club, to: i%2===0?pl.club:CLUBS[(i+3)%CLUBS.length].name, date:"2026-0"+(1+i%8)+"-2"+(i%8), type, amount: type==="Transfert définitif"? (10+(i*17)%90)+" M FCFA" : "—", status: i%5===0?"En négociation":"Officialisé"});
+}
+
+const CENTRES = [
+  {id:'ce0',name:"Académie ASEC Mimosas (Sol Béni)",city:"Abidjan",director:"Robert Dujardin",tech:"Kamagaté Vamara",categories:"U13 – U18",effectif:120,founded:1994,desc:"L'une des académies historiques ayant révélé plusieurs internationaux ivoiriens.",players:PLAYERS.filter(p=>p.talent).slice(0,6)},
+  {id:'ce1',name:"Centre de formation Africa Sports",city:"Abidjan",director:"Yao Digbeu",tech:"Serge Alain",categories:"U15 – U20",effectif:95,founded:2001,desc:"Filière de formation adossée au club historique Africa Sports d'Abidjan.",players:PLAYERS.filter(p=>p.talent).slice(2,7)},
+  {id:'ce2',name:"Académie MimoSifcom",city:"Sol Béni",director:"Jean-Marc Guillou (héritage)",tech:"Ousmane Cissé",categories:"U11 – U17",effectif:80,founded:1994,desc:"Approche de formation technique inspirée du modèle historique JMG.",players:PLAYERS.filter(p=>p.talent).slice(4,9)},
+  {id:'ce3',name:"Centre de Korhogo Espoir",city:"Korhogo",director:"Silué Fanigui",tech:"Doh Charles",categories:"U13 – U19",effectif:64,founded:2010,desc:"Centre régional du Nord, vivier de jeunes talents du district de Korhogo.",players:PLAYERS.filter(p=>p.talent).slice(1,5)},
+  {id:'ce4',name:"Académie San-Pédro Avenir",city:"San-Pédro",director:"Zadi Bertin",tech:"Kacou Landry",categories:"U14 – U18",effectif:70,founded:2013,desc:"Centre côtier réputé pour la détection de profils physiques et rapides.",players:PLAYERS.filter(p=>p.talent).slice(3,8)},
+  {id:'ce5',name:"Centre Bouaké Jeunesse",city:"Bouaké",director:"Fofana Aka",tech:"Traoré Fatoumata",categories:"U12 – U17",effectif:58,founded:2016,desc:"Structure du centre du pays formant aux fondamentaux techniques.",players:PLAYERS.filter(p=>p.talent).slice(0,4)},
+  {id:'ce6',name:"Académie Daloa Marahoué",city:"Daloa",director:"Gbalet Serge",tech:"Camara Prince",categories:"U13 – U18",effectif:52,founded:2015,desc:"Structure émergente de la région du Haut-Sassandra.",players:PLAYERS.filter(p=>p.talent).slice(2,6)},
+  {id:'ce7',name:"Centre Yamoussoukro Excellence",city:"Yamoussoukro",director:"Coulibaly Habib",tech:"Adje Modeste",categories:"U14 – U19",effectif:66,founded:2012,desc:"Centre situé dans la capitale politique, partenaire de plusieurs clubs de Ligue 1.",players:PLAYERS.filter(p=>p.talent).slice(1,6)},
+  {id:'ce8',name:"Académie Abengourou Talents",city:"Abengourou",director:"Kra Wilfried",tech:"Angoua Armand",categories:"U13 – U17",effectif:47,founded:2018,desc:"Jeune centre de l'Est, en fort développement.",players:PLAYERS.filter(p=>p.talent).slice(0,3)},
+  {id:'ce9',name:"Centre Man Montagnes",city:"Man",director:"Diomandé Cheick",tech:"Meite Junior",categories:"U12 – U18",effectif:40,founded:2019,desc:"Centre de l'Ouest montagneux, orienté vers l'endurance et le jeu physique.",players:PLAYERS.filter(p=>p.talent).slice(5,9)},
+];
+
+const ART_CATS = ["Côte d'Ivoire","Ligue 1","Ligue 2","Transferts","Éléphants","Jeunes","Centres de formation","International"];
+const ARTICLES = [];
+const HEADLINES = [
+  "L'ASEC Mimosas confirme sa dynamique en tête de la Ligue 1",
+  "Les Éléphants préparent les prochaines échéances continentales",
+  "Mercato : plusieurs mouvements attendus avant la clôture",
+  "Un jeune talent de l'académie de Sol Béni attire les recruteurs",
+  "Le Racing Club d'Abidjan retrouve des couleurs",
+  "Focus sur la montée en puissance de la Division 3",
+  "Portrait : un défenseur formé au centre de Korhogo",
+  "Résumé de la journée en Ligue 2, poule A",
+  "La Coupe de Côte d'Ivoire entre dans sa phase décisive",
+  "Les centres de formation ivoiriens à l'honneur",
+  "Trois clubs se disputent la lutte pour le maintien",
+  "Interview : un entraîneur revient sur la première partie de saison",
+  "Les statistiques marquantes du mois",
+  "Un gardien impressionne lors des dernières rencontres",
+  "Le point sur les districts et championnats régionaux"
+];
+for(let i=0;i<15;i++){
+  ARTICLES.push({id:'a'+i, title:HEADLINES[i], cat:ART_CATS[i%ART_CATS.length], author:PRENOMS[i%PRENOMS.length]+" "+NOMS[i%NOMS.length], date:"2026-0"+(1+i%9)+"-0"+(1+i%9),
+   summary:"Retour sur les faits marquants de l'actualité du football ivoirien, avec les réactions des acteurs concernés et les enjeux à venir pour les prochaines journées.",
+   content:"Cet article de démonstration présente le format éditorial d'IVOIREFOOT MARKET : image principale, titre, résumé, auteur, date de publication, catégorie et contenu complet. Le contenu détaillé reviendrait ici sur le contexte, les déclarations des dirigeants, les statistiques du match ou de la période concernée, ainsi que les perspectives pour les prochaines semaines de compétition."});
+}
+
+/* =========================================================
+   ÉTAT GLOBAL
+   ========================================================= */
+const SECTIONS = [
+  {id:'accueil',label:'Accueil'},
+  {id:'joueurs',label:'Joueurs'},
+  {id:'clubs',label:'Clubs'},
+  {id:'competitions',label:'Compétitions'},
+  {id:'transferts',label:'Transferts'},
+  {id:'resultats',label:'Résultats'},
+  {id:'classements',label:'Classements'},
+  {id:'calendrier',label:'Calendrier'},
+  {id:'centres',label:'Centres de formation'},
+  {id:'talents',label:'Jeunes talents'},
+  {id:'actualites',label:'Actualités'},
+  {id:'statistiques',label:'Statistiques'},
+  {id:'recherche',label:'Recherche'},
+  {id:'admin',label:'Administration'},
+];
+let currentSection = 'accueil';
+let currentUser = null; // {email, role}
+const ROLES = ["Visiteur","Administrateur","Éditeur","Club","Centre de formation","Joueur"];
+let adminPane = 'dashboard';
+
+/* =========================================================
+   NAV & ROUTAGE
+   ========================================================= */
+const navlinks = document.getElementById('navlinks');
+SECTIONS.forEach(s=>{
+  const b = document.createElement('button');
+  b.textContent = s.label; b.dataset.id = s.id;
+  b.onclick = ()=>goSection(s.id);
+  navlinks.appendChild(b);
+});
+function goSection(id){
+  currentSection = id;
+  document.querySelectorAll('#navlinks button').forEach(b=>b.classList.toggle('active', b.dataset.id===id));
+  render();
+  window.scrollTo({top: id==='accueil'?0:document.getElementById('mainnav').offsetHeight, behavior:'smooth'});
+}
+
+function fmtFCFA(m){ return m.toFixed(1)+" M FCFA"; }
+function esc(s){ return (s+"").replace(/</g,"&lt;"); }
+
+/* =========================================================
+   RENDU DES SECTIONS
+   ========================================================= */
+const app = document.getElementById('app');
+
+function render(){
+  let html = '';
+  switch(currentSection){
+    case 'accueil': html = renderAccueil(); break;
+    case 'joueurs': html = renderJoueurs(); break;
+    case 'clubs': html = renderClubs(); break;
+    case 'competitions': html = renderCompetitions(); break;
+    case 'transferts': html = renderTransferts(); break;
+    case 'resultats': html = renderResultats(); break;
+    case 'classements': html = renderClassements(); break;
+    case 'calendrier': html = renderCalendrier(); break;
+    case 'centres': html = renderCentres(); break;
+    case 'talents': html = renderTalents(); break;
+    case 'actualites': html = renderActualites(); break;
+    case 'statistiques': html = renderStatistiques(); break;
+    case 'recherche': html = renderRecherche(); break;
+    case 'admin': html = renderAdmin(); break;
+  }
+  app.innerHTML = html;
+  afterRender();
+}
+document.querySelectorAll('#navlinks button')[0]?.classList.add('active');
+
+function afterRender(){
+  if(currentSection==='joueurs') bindPlayerFilters();
+  if(currentSection==='clubs') bindClubFilters();
+  if(currentSection==='classements') bindStandingsSelect();
+  if(currentSection==='recherche') bindSearch();
+  if(currentSection==='admin') bindAdmin();
+}
+
+/* ---------- ACCUEIL ---------- */
+function renderAccueil(){
+  return `
+  <section id="hero">
+    <div class="wrap"><div class="inner">
+      <span class="eyebrow">Base de données du football ivoirien</span>
+      <h1>IVOIREFOOT <span>MARKET</span></h1>
+      <p class="lead">La référence N°1 du football ivoirien. Joueurs, clubs, compétitions, transferts et centres de formation — du professionnel aux districts, avec les jeunes talents à suivre.</p>
+      <div class="searchbar">
+        <input id="heroSearch" placeholder="Rechercher un joueur, un club, une compétition..." onkeydown="if(event.key==='Enter')doHeroSearch()">
+        <button onclick="doHeroSearch()">Rechercher</button>
+      </div>
+      <div class="statgrid">
+        <div class="statcell"><b>${PLAYERS.length}</b><span>Joueurs référencés</span></div>
+        <div class="statcell"><b>${CLUBS.length}</b><span>Clubs</span></div>
+        <div class="statcell"><b>${COMPETITIONS.length}</b><span>Compétitions</span></div>
+        <div class="statcell"><b>${CENTRES.length}</b><span>Centres de formation</span></div>
+        <div class="statcell"><b>${TRANSFERS.length}</b><span>Transferts</span></div>
+        <div class="statcell"><b>${RESULTS.length}</b><span>Matchs enregistrés</span></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sechead"><div><h2>Résultats récents</h2><div class="sub">Derniers matchs enregistrés sur la plateforme</div></div><button class="btn btn-outline btn-sm" onclick="goSection('resultats')">Tout voir</button></div>
+      <div class="grid cols3">${RESULTS.slice(0,3).map(matchCardHtml).join('')}</div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="sechead"><div><h2>Talents à suivre</h2><div class="sub">Jeunes joueurs prometteurs du football ivoirien</div></div><button class="btn btn-outline btn-sm" onclick="goSection('talents')">Tout voir</button></div>
+      <div class="grid cols4">${PLAYERS.filter(p=>p.talent).slice(0,4).map(p=>playerCardHtml(p,true)).join('')}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sechead"><div><h2>Actualités</h2><div class="sub">L'essentiel du football ivoirien</div></div><button class="btn btn-outline btn-sm" onclick="goSection('actualites')">Tout voir</button></div>
+      <div class="grid cols3">${ARTICLES.slice(0,3).map(articleCardHtml).join('')}</div>
+    </div>
+  </section>
+  `;
+}
+function doHeroSearch(){ goSection('recherche'); setTimeout(()=>{ const i=document.getElementById('searchInput'); if(i){ i.value=document.getElementById('heroSearch').value; runSearch(); } },30); }
+
+/* ---------- JOUEURS ---------- */
+function playerCardHtml(p, big){
+  return `<div class="card playercard" onclick="openPlayer('${p.id}')">
+    <div class="photo">${p.talent?`<span class="talentbadge badge">${p.video?'À suivre':'Talent émergent'}</span>`:''}<span class="num">${p.number}</span></div>
+    <div class="body">
+      <h4>${esc(p.name)}</h4>
+      <div class="meta">${p.position} · ${esc(p.club)}</div>
+      <div class="stats"><div><b>${p.goals}</b>Buts</div><div><b>${p.assists}</b>Passes</div><div><b>${p.apps}</b>Matchs</div></div>
+    </div>
+  </div>`;
+}
+function renderJoueurs(){
+  return `<section class="section"><div class="wrap">
+    <div class="sechead"><div><h2>Joueurs</h2><div class="sub">${PLAYERS.length} joueurs référencés sur la plateforme</div></div></div>
+    <div class="filterbar">
+      <input id="fName" placeholder="Nom du joueur">
+      <select id="fPos"><option value="">Tous les postes</option>${POSITIONS.map(p=>`<option>${p}</option>`).join('')}</select>
+      <select id="fClub"><option value="">Tous les clubs</option>${CLUBS.map(c=>`<option>${esc(c.name)}</option>`).join('')}</select>
+      <select id="fNat"><option value="">Toutes nationalités</option>${[...new Set(NATIONS)].map(n=>`<option>${n}</option>`).join('')}</select>
+      <select id="fRegion"><option value="">Toutes régions</option>${[...new Set(VILLES)].map(v=>`<option>${v}</option>`).join('')}</select>
+      <button class="btn btn-orange btn-sm" onclick="applyPlayerFilters()">Filtrer</button>
+    </div>
+    <div id="playerGrid" class="grid cols4">${PLAYERS.map(p=>playerCardHtml(p)).join('')}</div>
+  </div></section>`;
+}
+function bindPlayerFilters(){}
+function applyPlayerFilters(){
+  const name=document.getElementById('fName').value.toLowerCase();
+  const pos=document.getElementById('fPos').value;
+  const club=document.getElementById('fClub').value;
+  const nat=document.getElementById('fNat').value;
+  const region=document.getElementById('fRegion').value;
+  const res = PLAYERS.filter(p=> (!name||p.name.toLowerCase().includes(name)) && (!pos||p.position===pos) && (!club||p.club===club) && (!nat||p.nation===nat) && (!region||p.region===region));
+  document.getElementById('playerGrid').innerHTML = res.length? res.map(p=>playerCardHtml(p)).join('') : emptyHtml("Aucun résultat trouvé","Essayez d'élargir vos critères de recherche.");
+}
+function emptyHtml(title, sub){ return `<div class="empty" style="grid-column:1/-1;"><b>${title}</b>${sub}</div>`; }
+
+function openPlayer(id){
+  const p = PLAYERS.find(x=>x.id===id);
+  showModal(`
+   <div class="modal-head"><h3>${esc(p.name)}</h3><button onclick="closeModal()">×</button></div>
+   <div class="modal-body">
+    <div class="pill pill-orange">${p.position}</div> <div class="pill pill-navy" style="margin-left:6px;">#${p.number}</div> ${p.talent?'<span class="pill pill-green" style="margin-left:6px;">Talent émergent</span>':''}
+    <div class="infogrid">
+      <div><div class="k">Date de naissance</div><div class="v">${p.dob}</div></div>
+      <div><div class="k">Âge</div><div class="v">${p.age} ans</div></div>
+      <div><div class="k">Nationalité</div><div class="v">${p.nation}</div></div>
+      <div><div class="k">Pied préféré</div><div class="v">${p.foot}</div></div>
+      <div><div class="k">Taille</div><div class="v">${p.height} cm</div></div>
+      <div><div class="k">Club actuel</div><div class="v">${esc(p.club)}</div></div>
+      <div><div class="k">Ancien club</div><div class="v">${esc(p.oldClub)}</div></div>
+      <div><div class="k">Fin de contrat</div><div class="v">${p.contractEnd}</div></div>
+      <div><div class="k">Valeur estimée</div><div class="v">${fmtFCFA(p.value)}</div></div>
+      <div><div class="k">Région</div><div class="v">${p.region}</div></div>
+    </div>
+    <h4 style="margin-top:20px;font-size:15px;">Statistiques de la saison</h4>
+    <div class="infogrid">
+      <div><div class="k">Matchs joués</div><div class="v">${p.apps}</div></div>
+      <div><div class="k">Buts</div><div class="v">${p.goals}</div></div>
+      <div><div class="k">Passes décisives</div><div class="v">${p.assists}</div></div>
+      <div><div class="k">Cartons jaunes</div><div class="v">${p.yellow}</div></div>
+      <div><div class="k">Cartons rouges</div><div class="v">${p.red}</div></div>
+    </div>
+    <h4 style="margin-top:20px;font-size:15px;">Historique</h4>
+    <p style="font-size:13.5px;color:var(--muted);margin-top:6px;">Passé de ${esc(p.oldClub)} à ${esc(p.club)}. Historique des transferts complet consultable dans la section Transferts.</p>
+   </div>`);
+}
+
+/* ---------- CLUBS ---------- */
+function clubCardHtml(c){
+  const initials = c.name.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
+  return `<div class="card clubcard" onclick="openClub('${c.id}')">
+    <div style="display:flex;align-items:center;gap:12px;"><div class="crest">${initials}</div><div><h4>${esc(c.name)}</h4><div class="meta">${c.city}</div></div></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;">
+      <span class="pill pill-navy">${c.division}${c.poule?(' · Poule '+c.poule):''}</span>
+      ${c.verified?'<span class="pill pill-green">✓ Profil vérifié</span>':''}
+    </div>
+  </div>`;
+}
+function renderClubs(){
+  const divisions = [...new Set(CLUBS.map(c=>c.division))];
+  return `<section class="section"><div class="wrap">
+    <div class="sechead"><div><h2>Clubs</h2><div class="sub">${CLUBS.length} clubs référencés — Ligue 1, Ligue 2, Division 3</div></div></div>
+    <div class="filterbar">
+      <input id="cName" placeholder="Nom du club">
+      <select id="cDiv"><option value="">Toutes divisions</option>${divisions.map(d=>`<option>${d}</option>`).join('')}</select>
+      <select id="cVille"><option value="">Toutes villes</option>${[...new Set(CLUBS.map(c=>c.city))].map(v=>`<option>${esc(v)}</option>`).join('')}</select>
+      <button class="btn btn-orange btn-sm" onclick="applyClubFilters()">Filtrer</button>
+    </div>
+    <div id="clubGrid" class="grid cols4">${CLUBS.map(clubCardHtml).join('')}</div>
+  </div></section>`;
+}
+function bindClubFilters(){}
+function applyClubFilters(){
+  const name=document.getElementById('cName').value.toLowerCase();
+  const div=document.getElementById('cDiv').value;
+  const ville=document.getElementById('cVille').value;
+  const res = CLUBS.filter(c=> (!name||c.name.toLowerCase().includes(name)) && (!div||c.division===div) && (!ville||c.city===ville));
+  document.getElementById('clubGrid').innerHTML = res.length? res.map(clubCardHtml).join('') : emptyHtml("Aucun résultat trouvé","Essayez d'élargir vos critères de recherche.");
+}
+function openClub(id){
+  const c = CLUBS.find(x=>x.id===id);
+  const squad = PLAYERS.filter(p=>p.clubId===c.id);
+  const recentResults = RESULTS.filter(r=>r.home===c.name||r.away===c.name).slice(0,3);
+  const recentTransfers = TRANSFERS.filter(t=>t.from===c.name||t.to===c.name).slice(0,3);
+  showModal(`
+   <div class="modal-head"><h3>${esc(c.name)}</h3><button onclick="closeModal()">×</button></div>
+   <div class="modal-body">
+    <span class="pill pill-navy">${c.division}${c.poule?(' · Poule '+c.poule):''}</span> ${c.verified?'<span class="pill pill-green" style="margin-left:6px;">✓ Profil vérifié</span>':''}
+    <div class="infogrid">
+      <div><div class="k">Ville</div><div class="v">${c.city}</div></div>
+      <div><div class="k">Stade</div><div class="v">${c.stadium}</div></div>
+      <div><div class="k">Président</div><div class="v">${c.president}</div></div>
+      <div><div class="k">Entraîneur</div><div class="v">${c.coach}</div></div>
+      <div><div class="k">Fondé en</div><div class="v">${c.founded}</div></div>
+      <div><div class="k">Effectif référencé</div><div class="v">${squad.length} joueurs</div></div>
+    </div>
+    <h4 style="margin-top:18px;font-size:15px;">Effectif</h4>
+    ${squad.length? `<div class="rowlist" style="margin-top:8px;">${squad.map(p=>`<div class="rowitem" style="cursor:pointer;" onclick="closeModal();setTimeout(()=>openPlayer('${p.id}'),50)"><span>#${p.number} ${esc(p.name)}</span><span class="meta">${p.position}</span></div>`).join('')}</div>` : `<p style="color:var(--muted);font-size:13px;">Information non disponible</p>`}
+    <h4 style="margin-top:18px;font-size:15px;">Résultats récents</h4>
+    ${recentResults.length? `<div class="rowlist" style="margin-top:8px;">${recentResults.map(r=>`<div class="rowitem"><span>${esc(r.home)} ${r.hs}-${r.as} ${esc(r.away)}</span><span class="meta">${r.date}</span></div>`).join('')}</div>` : `<p style="color:var(--muted);font-size:13px;">Information non disponible</p>`}
+    <h4 style="margin-top:18px;font-size:15px;">Transferts récents</h4>
+    ${recentTransfers.length? `<div class="rowlist" style="margin-top:8px;">${recentTransfers.map(t=>`<div class="rowitem"><span>${esc(t.player)} (${esc(t.from)} → ${esc(t.to)})</span><span class="meta">${t.type}</span></div>`).join('')}</div>` : `<p style="color:var(--muted);font-size:13px;">Information non disponible</p>`}
+    <h4 style="margin-top:18px;font-size:15px;">Palmarès</h4>
+    <p style="font-size:13.5px;color:var(--muted);margin-top:6px;">${c.palmares.join(' · ')}</p>
+   </div>`);
+}
+
+/* ---------- COMPETITIONS ---------- */
+function renderCompetitions(){
+  return `<section class="section"><div class="wrap">
+    <div class="sechead"><div><h2>Compétitions</h2><div class="sub">Championnats et coupes du football ivoirien</div></div></div>
+    <div class="grid cols3">${COMPETITIONS.map(co=>`
+      <div class="card competcard" onclick="openCompetition('${co.id}')">
+        <h4>${esc(co.name)}</h4>
+        <div class="meta" style="color:var(--muted);font-size:13px;">${co.type}</div>
+        <div class="pill pill-navy" style="width:fit-content;">${co.clubs.length} clubs participants</div>
+      </div>`).join('')}
+    </div>
+  </div></section>`;
+}
+function openCompetition(id){
+  const co = COMPETITIONS.find(x=>x.id===id);
+  const standings = buildStandings(co.clubs).slice(0,10);
+  const fixtures = CALENDAR.filter(m=>m.comp===co.name);
+  const results = RESULTS.filter(m=>m.comp===co.name);
+  const scorers = [...PLAYERS].filter(p=>co.clubs.some(c=>c.id===p.clubId)).sort((a,b)=>b.goals-a.goals).slice(0,5);
+  showModal(`
+   <div class="modal-head"><h3>${esc(co.name)}</h3><button onclick="closeModal()">×</button></div>
+   <div class="modal-body">
+    <div class="tabs">
+      <button class="active" onclick="switchTab(this,'ctab-cl')">Classement</button>
+      <button onclick="switchTab(this,'ctab-ca')">Calendrier</button>
+      <button onclick="switchTab(this,'ctab-re')">Résultats</button>
+      <button onclick="switchTab(this,'ctab-bu')">Buteurs</button>
+    </div>
+    <div id="ctab-cl">${standingsTableHtml(standings)}</div>
+    <div id="ctab-ca" class="hidden">${fixtures.length? fixtures.map(m=>`<div class="rowitem"><span>${esc(m.home)} vs ${esc(m.away)}</span><span class="meta">${m.date} · ${m.time}</span></div>`).join('') : emptyHtml('Aucun résultat trouvé','Aucun match programmé pour cette compétition.')}</div>
+    <div id="ctab-re" class="hidden">${results.length? results.map(r=>`<div class="rowitem"><span>${esc(r.home)} ${r.hs}-${r.as} ${esc(r.away)}</span><span class="meta">${r.date}</span></div>`).join('') : emptyHtml('Aucun résultat trouvé','Aucun résultat enregistré pour cette compétition.')}</div>
+    <div id="ctab-bu" class="hidden">${scorers.map(p=>`<div class="rowitem"><span>${esc(p.name)} — ${esc(p.club)}</span><span class="meta">${p.goals} buts</span></div>`).join('')}</div>
+   </div>`);
+}
+function switchTab(btn, paneId){
+  const tabs = btn.parentElement;
+  tabs.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const body = tabs.parentElement;
+  body.querySelectorAll('[id^="ctab-"]').forEach(p=>p.classList.add('hidden'));
+  document.getElementById(paneId).classList.remove('hidden');
+}
+function standingsTableHtml(standings){
+  return `<table class="stdtable"><thead><tr><th>Club</th><th>MJ</th><th>G</th><th>N</th><th>P</th><th>BP</th><th>BC</th><th>Diff</th><th>Pts</th></tr></thead><tbody>
+    ${standings.map((s,i)=>`<tr><td>${i+1}. ${esc(s.club.name)}</td><td>${s.mj}</td><td>${s.g}</td><td>${s.n}</td><td>${s.p}</td><td>${s.bp}</td><td>${s.bc}</td><td>${s.bp-s.bc}</td><td><b>${s.pts}</b></td></tr>`).join('')}
+  </tbody></table>`;
+}
+
+/* ---------- TRANSFERTS ---------- */
+function renderTransferts(){
+  return `<section class="section"><div class="wrap">
+    <div class="sechead"><div><h2>Transferts</h2><div class="sub">Historique des mouvements de joueurs</div></div></div>
+    <div class="filterbar">
+      <select id="tType"><option value="">Tous les types</option>${TTYPES.map(t=>`<option>${t}</option>`).join('')}</select>
+      <input id="tClub" placeholder="Filtrer par club">
+      <input id="tPlayer" placeholder="Filtrer par joueur">
+      <button class="btn btn-orange btn-sm" onclick="applyTransferFilters()">Filtrer</button>
+    </div>
+    <div id="transferList" class="rowlist">${TRANSFERS.map(transferRow).join('')}</div>
+  </div></section>`;
+}
+function transferRow(t){
+  return `<div class="rowitem">
+    <div class="tflow">${esc(t.player)}</div>
+    <div class="tflow" style="font-weight:400;">${esc(t.from)} <span class="arrow">→</span> ${esc(t.to)}</div>
+    <span class="pill pill-orange">${t.type}</span>
+    <span class="meta">${t.date} · ${t.amount}</span>
+    <span class="pill ${t.status==='Officialisé'?'pill-green':'pill-navy'}">${t.status}</span>
+  </div>`;
+}
+function applyTransferFilters(){
+  const type=document.getElementById('tType').value;
+  const club=document.getElementById('tClub').value.toLowerCase();
+  const player=document.getElementById('tPlayer').value.toLowerCase();
+  const res = TRANSFERS.filter(t=> (!type||t.type===type) && (!club|| t.from.toLowerCase().includes(club)||t.to.toLowerCase().includes(club)) && (!player||t.player.toLowerCase().includes(player)));
+  document.getElementById('transferList').innerHTML = res.length? res.map(transferRow).join('') : emptyHtml("Aucun résultat trouvé","Essayez d'élargir vos critères.");
+}
+
+/* ---------- RESULTATS ---------- */
+function matchCardHtml(r){
+  return `<div class="matchcard">
+    <div class="comp">${esc(r.comp)} · ${r.date}</div>
+    <div class="matchrow">
+      <div class="matchteam">${esc(r.home)}</div>
+      <div class="score">${r.hs} - ${r.as}</div>
+      <div class="matchteam right">${esc(r.away)}</div>
+    </div>
+    <div class="matchmeta">${r.stadium} · Buteur(s) : ${esc(r.scorers)}</div>
+  </div>`;
+}
+function renderResultats(){
+  return `<section class="section"><div class="wrap">
+    <div class="sechead"><div><h2>Résultats</h2><div class="sub">Matchs du jour et résultats récents</div></div></div>
+    <div class="grid cols3">${RESULTS.map(matchCardHtml).join('')}</div>
+  </div></section>`;
+}
+
+/* ---------- CLASSEMENTS ---------- */
+function renderClassements(){
+  const leagueComps = LEAGUE_COMPETITIONS;
+  return `<section class="section"><div class="wrap">
+    <div class="sechead"><div><h2>Classements</h2><div class="sub">Saison 2025-2026</div></div>
+      <select id="stdSelect">${leagueComps.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join('')}</select>
+    </div>
+    <div id="stdTableWrap">${standingsTableHtml(buildStandings(leagueComps[0].clubs))}</div>
+  </div></section>`;
+}
+function bindStandingsSelect(){
+  document.getElementById('stdSelect').onchange = (e)=>{
+    const co = COMPETITIONS.find(c=>c.id===e.target.value);
+    document.getElementById('stdTableWrap').innerHTML = standingsTableHtml(buildStandings(co.clubs));
+  };
+}
+
+/* ---------- CALENDRIER ---------- */
+function renderCalendrier(){
+  return `<section class="section"><div class="wrap">
+    <div class="sechead"><div><h2>Calendrier</h2><div class="sub">Prochains matchs à venir</div></div></div>
+    <div class="rowlist">${CALENDAR.map(m=>`<div class="rowitem">
+      <span class="pill pill-navy">${esc(m.comp)}</span>
+      <span style="font-weight:600;">${esc(m.home)} vs ${esc(m.away)}</span>
+      <span class="meta">${m.date} · ${m.time}</span>
+      <span class="meta">${m.stadium}</span>
+    </div>`).join('')}</div>
+  </div></section>`;
+}
+
+/* ---------- CENTRES DE FORMATION ---------- */
+function renderCentres(){
+  return `<section class="section"><div class="wrap">
+    <div class="sechead"><div><h2>Centres de formation</h2><div class="sub">Annuaire des centres de formation ivoiriens</div></div></div>
+    <div class="filterbar"><input id="ceName" placeholder="Rechercher un centre ou une ville" oninput="filterCentres()"></div>
+    <div id="centreGrid" class="grid cols3">${CENTRES.map(centreCardHtml).join('')}</div>
+  </div></section>`;
+}
+function centreCardHtml(ce){
+  return `<div class="card centrecard" onclick="openCentre('${ce.id}')">
+    <h4>${esc(ce.name)}</h4>
+    <div class="meta" style="color:var(--muted);font-size:13px;margin-top:4px;">${ce.city} · ${ce.categories}</div>
+    <p style="font-size:13px;color:var(--muted);margin-top:8px;">${ce.desc}</p>
+  </div>`;
+}
+function filterCentres(){
+  const q = document.getElementById('ceName').value.toLowerCase();
+  const res = CENTRES.filter(c=>c.name.toLowerCase().includes(q)||c.city.toLowerCase().includes(q));
+  document.getElementById('centreGrid').innerHTML = res.length? res.map(centreCardHtml).join('') : emptyHtml("Aucun résultat trouvé","Essayez un autre nom de centre ou de ville.");
+}
+function openCentre(id){
+  const c = CENTRES.find(x=>x.id===id);
+  showModal(`
+   <div class="modal-head"><h3>${esc(c.name)}</h3><button onclick="closeModal()">×</button></div>
+   <div class="modal-body">
+    <div class="infogrid">
+      <div><div class="k">Localisation</div><div class="v">${c.city}</div></div>
+      <div><div class="k">Directeur</div><div class="v">${c.director}</div></div>
+      <div><div class="k">Responsable technique</div><div class="v">${c.tech}</div></div>
+      <div><div class="k">Catégories d'âge</div><div class="v">${c.categories}</div></div>
+      <div><div class="k">Effectif</div><div class="v">${c.effectif} joueurs</div></div>
+      <div><div class="k">Fondé en</div><div class="v">${c.founded}</div></div>
+    </div>
+    <h4 style="margin-top:18px;font-size:15px;">Présentation</h4>
+    <p style="font-size:13.5px;color:var(--muted);margin-top:6px;">${c.desc}</p>
+    <h4 style="margin-top:18px;font-size:15px;">Joueurs suivis</h4>
+    <div class="rowlist" style="margin-top:8px;">${c.players.map(p=>`<div class="rowitem" style="cursor:pointer;" onclick="closeModal();setTimeout(()=>openPlayer('${p.id}'),50)"><span>${esc(p.name)}</span><span class="meta">${p.position} · ${p.age} ans</span></div>`).join('')}</div>
+    <h4 style="margin-top:18px;font-size:15px;">Contact</h4>
+    <p style="font-size:13.5px;color:var(--muted);margin-top:6px;">contact@${c.name.toLowerCase().replace(/[^a-z]+/g,'')}.ci · +225 07 00 00 00 00</p>
+   </div>`);
+}
+
+/* ---------- JEUNES TALENTS ---------- */
+function renderTalents(){
+  const talents = PLAYERS.filter(p=>p.talent);
+  return `<section class="section"><div class="wrap">
+    <div class="sechead"><div><h2>Jeunes talents</h2><div class="sub">Talents à suivre du football ivoirien</div></div></div>
+    <div class="grid cols4">${talents.map(p=>`
+      <div class="card talentcard" onclick="openPlayer('${p.id}')">
+        <span class="talentbadge">${p.video?'À suivre':(p.age<=18?'Espoir ivoirien':'Talent émergent')}</span>
+        <div class="body" style="padding:16px;">
+          <h4 style="font-size:15.5px;">${esc(p.name)}</h4>
+          <div class="meta">${p.age} ans · ${p.position}</div>
+          <div class="meta">${esc(p.club)} · ${p.region}</div>
+          <div class="meta">Pied fort : ${p.foot}</div>
+          ${p.video? `<div class="pill pill-orange" style="margin-top:8px;">Vidéo disponible</div>`:''}
+        </div>
+      </div>`).join('')}
+    </div>
+  </div></section>`;
+}
+
+/* ---------- ACTUALITES ---------- */
+function articleCardHtml(a){
+  return `<div class="card artcard" onclick="openArticle('${a.id}')">
+    <div class="thumb"><span class="pill pill-orange cat">${a.cat}</span></div>
+    <div class="body"><h4>${esc(a.title)}</h4><div class="meta">${a.author} · ${a.date}</div></div>
+  </div>`;
+}
+function renderActualites(){
+  return `<section class="section"><div class="wrap">
+    <div class="sechead"><div><h2>Actualités</h2><div class="sub">L'actualité du football ivoirien</div></div>
+      <select id="artCat" onchange="filterArticles()"><option value="">Toutes catégories</option>${ART_CATS.map(c=>`<option>${c}</option>`).join('')}</select>
+    </div>
+    <div id="artGrid" class="grid cols3">${ARTICLES.map(articleCardHtml).join('')}</div>
+  </div></section>`;
+}
+function filterArticles(){
+  const cat = document.getElementById('artCat').value;
+  const res = ARTICLES.filter(a=>!cat||a.cat===cat);
+  document.getElementById('artGrid').innerHTML = res.length? res.map(articleCardHtml).join('') : emptyHtml("Aucun résultat trouvé","Aucun article dans cette catégorie.");
+}
+function openArticle(id){
+  const a = ARTICLES.find(x=>x.id===id);
+  showModal(`
+   <div class="modal-head"><h3>${esc(a.title)}</h3><button onclick="closeModal()">×</button></div>
+   <div class="modal-body">
+    <div class="thumb" style="height:160px;border-radius:4px;margin-bottom:14px;background:linear-gradient(140deg,var(--green),var(--navy));"></div>
+    <span class="pill pill-orange">${a.cat}</span>
+    <p style="font-size:12.5px;color:var(--muted);margin-top:8px;">Par ${a.author} · ${a.date}</p>
+    <p style="margin-top:14px;font-weight:600;">${a.summary}</p>
+    <p style="margin-top:12px;font-size:14px;line-height:1.6;color:var(--navy);">${a.content}</p>
+   </div>`);
+}
+
+/* ---------- STATISTIQUES ---------- */
+function barRows(list, key, label, max){
+  return list.map(p=>`<div class="statbarrow"><div class="name">${esc(p.name)}</div><div class="track"><div class="fill" style="width:${Math.round(p[key]/max*100)}%"></div></div><div class="val">${p[key]}</div></div>`).join('');
+}
+function renderStatistiques(){
+  const topScorers = [...PLAYERS].sort((a,b)=>b.goals-a.goals).slice(0,6);
+  const topAssists = [...PLAYERS].sort((a,b)=>b.assists-a.assists).slice(0,6);
+  const youngest = [...PLAYERS].sort((a,b)=>a.age-b.age).slice(0,6);
+  const mostUsed = [...PLAYERS].sort((a,b)=>b.apps-a.apps).slice(0,6);
+  const clubGoals = CLUBS.map(c=>({name:c.name, goals: PLAYERS.filter(p=>p.clubId===c.id).reduce((s,p)=>s+p.goals,0)})).sort((a,b)=>b.goals-a.goals).slice(0,6);
+  return `<section class="section"><div class="wrap">
+    <div class="sechead"><div><h2>Statistiques</h2><div class="sub">Chiffres clés de la saison 2025-2026</div></div></div>
+    <div class="grid cols2">
+      <div class="rowlist" style="padding:18px;"><h4 style="margin-bottom:14px;font-size:15px;">Meilleurs buteurs</h4>${barRows(topScorers,'goals','Buts',Math.max(...topScorers.map(p=>p.goals),1))}</div>
+      <div class="rowlist" style="padding:18px;"><h4 style="margin-bottom:14px;font-size:15px;">Meilleurs passeurs</h4>${barRows(topAssists,'assists','Passes',Math.max(...topAssists.map(p=>p.assists),1))}</div>
+      <div class="rowlist" style="padding:18px;"><h4 style="margin-bottom:14px;font-size:15px;">Joueurs les plus utilisés</h4>${barRows(mostUsed,'apps','Matchs',Math.max(...mostUsed.map(p=>p.apps),1))}</div>
+      <div class="rowlist" style="padding:18px;"><h4 style="margin-bottom:14px;font-size:15px;">Plus jeunes joueurs</h4>${youngest.map(p=>`<div class="rowitem"><span>${esc(p.name)}</span><span class="meta">${p.age} ans</span></div>`).join('')}</div>
+      <div class="rowlist" style="padding:18px;"><h4 style="margin-bottom:14px;font-size:15px;">Clubs les plus prolifiques</h4>${clubGoals.map(c=>`<div class="rowitem"><span>${esc(c.name)}</span><span class="meta">${c.goals} buts</span></div>`).join('')}</div>
+      <div class="rowlist" style="padding:18px;"><h4 style="margin-bottom:14px;font-size:15px;">Vue d'ensemble</h4>
+        <div class="rowitem"><span>Matchs joués</span><span class="meta">${RESULTS.length}</span></div>
+        <div class="rowitem"><span>Buts marqués</span><span class="meta">${RESULTS.reduce((s,r)=>s+r.hs+r.as,0)}</span></div>
+        <div class="rowitem"><span>Cartons distribués</span><span class="meta">${PLAYERS.reduce((s,p)=>s+p.yellow+p.red,0)}</span></div>
+        <div class="rowitem"><span>Clean sheets (estimation)</span><span class="meta">${RESULTS.filter(r=>r.as===0||r.hs===0).length}</span></div>
+      </div>
+    </div>
+  </div></section>`;
+}
+
+/* ---------- RECHERCHE ---------- */
+function renderRecherche(){
+  return `<section class="section"><div class="wrap">
+    <div class="sechead"><div><h2>Recherche</h2><div class="sub">Recherchez un joueur, un club, une compétition, un centre ou une actualité</div></div></div>
+    <div class="searchbar" style="max-width:none;box-shadow:none;border:1px solid var(--gray-line);">
+      <input id="searchInput" placeholder="Ex : Yamoussoukro, ASEC Mimosas, Kouassi..." oninput="runSearch()" style="color:var(--navy);">
+      <button class="btn-orange" style="border-radius:0;" onclick="runSearch()">Rechercher</button>
+    </div>
+    <div id="searchResults" style="margin-top:24px;"></div>
+  </div></section>`;
+}
+function bindSearch(){ document.getElementById('searchInput').focus(); }
+function runSearch(){
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  const box = document.getElementById('searchResults');
+  if(!q){ box.innerHTML=''; return; }
+  const players = PLAYERS.filter(p=>p.name.toLowerCase().includes(q)||p.club.toLowerCase().includes(q)||p.region.toLowerCase().includes(q)).slice(0,6);
+  const clubs = CLUBS.filter(c=>c.name.toLowerCase().includes(q)||c.city.toLowerCase().includes(q)).slice(0,6);
+  const comps = COMPETITIONS.filter(c=>c.name.toLowerCase().includes(q));
+  const centres = CENTRES.filter(c=>c.name.toLowerCase().includes(q)||c.city.toLowerCase().includes(q));
+  const arts = ARTICLES.filter(a=>a.title.toLowerCase().includes(q));
+  const total = players.length+clubs.length+comps.length+centres.length+arts.length;
+  if(total===0){ box.innerHTML = emptyHtml("Aucun résultat trouvé","Essayez un autre terme : nom de joueur, de club ou de ville."); return; }
+  box.innerHTML = `
+   ${players.length? `<h4 style="margin-bottom:8px;">Joueurs</h4><div class="rowlist" style="margin-bottom:20px;">${players.map(p=>`<div class="rowitem" style="cursor:pointer;" onclick="openPlayer('${p.id}')"><span>${esc(p.name)}</span><span class="meta">${p.position} · ${esc(p.club)}</span></div>`).join('')}</div>`:''}
+   ${clubs.length? `<h4 style="margin-bottom:8px;">Clubs</h4><div class="rowlist" style="margin-bottom:20px;">${clubs.map(c=>`<div class="rowitem" style="cursor:pointer;" onclick="openClub('${c.id}')"><span>${esc(c.name)}</span><span class="meta">${c.city}</span></div>`).join('')}</div>`:''}
+   ${comps.length? `<h4 style="margin-bottom:8px;">Compétitions</h4><div class="rowlist" style="margin-bottom:20px;">${comps.map(c=>`<div class="rowitem" style="cursor:pointer;" onclick="openCompetition('${c.id}')"><span>${esc(c.name)}</span><span class="meta">${c.type}</span></div>`).join('')}</div>`:''}
+   ${centres.length? `<h4 style="margin-bottom:8px;">Centres de formation</h4><div class="rowlist" style="margin-bottom:20px;">${centres.map(c=>`<div class="rowitem" style="cursor:pointer;" onclick="openCentre('${c.id}')"><span>${esc(c.name)}</span><span class="meta">${c.city}</span></div>`).join('')}</div>`:''}
+   ${arts.length? `<h4 style="margin-bottom:8px;">Actualités</h4><div class="rowlist">${arts.map(a=>`<div class="rowitem" style="cursor:pointer;" onclick="openArticle('${a.id}')"><span>${esc(a.title)}</span><span class="meta">${a.cat}</span></div>`).join('')}</div>`:''}
+  `;
+}
+
+/* =========================================================
+   AUTHENTIFICATION (démo)
+   ========================================================= */
+function openAuth(mode){
+  const isLogin = mode==='login';
+  showModal(`
+   <div class="modal-head"><h3>${isLogin?'Connexion':'Créer un compte'}</h3><button onclick="closeModal()">×</button></div>
+   <div class="modal-body">
+    <div class="formfield"><label>Adresse e-mail</label><input id="authEmail" type="email" placeholder="vous@exemple.ci"></div>
+    <div class="formfield"><label>Mot de passe</label><input id="authPass" type="password" placeholder="••••••••"></div>
+    ${!isLogin?`<div class="formfield"><label>Confirmer le mot de passe</label><input id="authPass2" type="password" placeholder="••••••••"></div>
+    <div class="formfield"><label>Rôle souhaité</label><select id="authRole">${ROLES.filter(r=>r!=='Visiteur'&&r!=='Administrateur').map(r=>`<option>${r}</option>`).join('')}</select></div>`:''}
+    <div id="authMsg"></div>
+    <button class="btn btn-orange" style="width:100%;margin-top:8px;" onclick="submitAuth(${isLogin})">${isLogin?'Se connecter':"S'inscrire"}</button>
+    <p style="text-align:center;margin-top:14px;font-size:13px;color:var(--muted);cursor:pointer;" onclick="openAuth('${isLogin?'register':'login'}')">${isLogin?"Pas encore de compte ? S'inscrire":"Déjà un compte ? Se connecter"}</p>
+   </div>`, true);
+}
+function submitAuth(isLogin){
+  const email = document.getElementById('authEmail').value;
+  const pass = document.getElementById('authPass').value;
+  const msg = document.getElementById('authMsg');
+  if(!email || !pass){ msg.innerHTML = `<div class="msgbox err">Veuillez remplir tous les champs obligatoires.</div>`; return; }
+  if(!isLogin){
+    const pass2 = document.getElementById('authPass2').value;
+    if(pass!==pass2){ msg.innerHTML = `<div class="msgbox err">Les mots de passe ne correspondent pas.</div>`; return; }
+    currentUser = {email, role: document.getElementById('authRole').value};
+  } else {
+    currentUser = {email, role: email.includes('admin')?'Administrateur':'Éditeur'};
+  }
+  msg.innerHTML = `<div class="msgbox ok">Connexion réussie. Bienvenue, ${esc(email)}.</div>`;
+  setTimeout(()=>{ closeModal(); if(currentSection==='admin') render(); }, 700);
+}
+
+/* =========================================================
+   ESPACE ADMINISTRATION
+   ========================================================= */
+let ADMIN_DATA = {
+  joueurs: PLAYERS.slice(0,15),
+  clubs: CLUBS.slice(0,15),
+  competitions: COMPETITIONS.map(c=>({name:c.name,type:c.type})),
+  resultats: RESULTS.slice(0,10),
+  transferts: TRANSFERS.slice(0,10),
+  actualites: ARTICLES.slice(0,10),
+  centres: CENTRES.slice(0,10),
+  utilisateurs: [
+    {email:'admin@ivoirefootmarket.ci', role:'Administrateur'},
+    {email:'redaction@ivoirefootmarket.ci', role:'Éditeur'},
+    {email:'contact@asec.ci', role:'Club'},
+  ]
+};
+const ADMIN_MENU = [
+  {id:'dashboard', label:'Tableau de bord'},
+  {id:'joueurs', label:'Gestion des joueurs'},
+  {id:'clubs', label:'Gestion des clubs'},
+  {id:'competitions', label:'Gestion des compétitions'},
+  {id:'resultats', label:'Gestion des résultats'},
+  {id:'transferts', label:'Gestion des transferts'},
+  {id:'actualites', label:'Gestion des actualités'},
+  {id:'centres', label:'Gestion des centres'},
+  {id:'statistiques', label:'Gestion des statistiques'},
+  {id:'utilisateurs', label:'Gestion des utilisateurs'},
+];
+function renderAdmin(){
+  const hasAccess = currentUser && (currentUser.role==='Administrateur' || currentUser.role==='Éditeur');
+  if(!hasAccess){
+    return `<section class="section"><div class="wrap">
+      <div class="gate">
+        <div class="lockicon">🔒</div>
+        <h2>Accès réservé</h2>
+        <p style="color:var(--muted);margin-top:8px;">Vous devez vous connecter avec un compte Administrateur ou Éditeur pour accéder à cet espace.</p>
+        <button class="btn btn-orange" style="margin-top:18px;" onclick="openAuth('login')">Se connecter</button>
+        <p style="margin-top:14px;font-size:12.5px;color:var(--muted);">Astuce démo : connectez-vous avec un e-mail contenant "admin" pour obtenir le rôle Administrateur.</p>
+      </div>
+    </div></section>`;
+  }
+  return `<section class="section"><div class="wrap">
+    <div class="sechead"><div><h2>Espace Administration</h2><div class="sub">Connecté en tant que ${esc(currentUser.email)} (${currentUser.role})</div></div>
+      <button class="btn btn-outline btn-sm" onclick="currentUser=null;render();">Se déconnecter</button>
+    </div>
+    <div class="demo-note">Les ajouts, modifications et suppressions ci-dessous sont appliqués en mémoire pour cette session de démonstration uniquement.</div>
+    <div class="adminlayout">
+      <div class="adminmenu">${ADMIN_MENU.map(m=>`<button class="${adminPane===m.id?'active':''}" data-id="${m.id}">${m.label}</button>`).join('')}</div>
+      <div class="adminpane" id="adminPaneBody">${renderAdminPane(adminPane)}</div>
+    </div>
+  </div></section>`;
+}
+function bindAdmin(){
+  document.querySelectorAll('.adminmenu button').forEach(b=>{
+    b.onclick = ()=>{ adminPane = b.dataset.id; render(); };
+  });
+}
+function renderAdminPane(pane){
+  if(pane==='dashboard'){
+    return `<h3>Vue d'ensemble</h3>
+    <div class="grid cols3">
+      <div class="rowlist" style="padding:16px;text-align:center;"><b style="font-family:var(--font-display);font-size:26px;color:var(--orange);">${PLAYERS.length}</b><div class="meta">Joueurs</div></div>
+      <div class="rowlist" style="padding:16px;text-align:center;"><b style="font-family:var(--font-display);font-size:26px;color:var(--orange);">${CLUBS.length}</b><div class="meta">Clubs</div></div>
+      <div class="rowlist" style="padding:16px;text-align:center;"><b style="font-family:var(--font-display);font-size:26px;color:var(--orange);">${ARTICLES.length}</b><div class="meta">Articles</div></div>
+    </div>
+    <p style="margin-top:18px;color:var(--muted);font-size:13.5px;">Utilisez le menu à gauche pour ajouter, modifier ou supprimer des joueurs, clubs, compétitions, résultats, transferts, actualités, centres de formation et utilisateurs.</p>`;
+  }
+  if(pane==='joueurs'){
+    return adminTable('joueurs', ['Nom','Poste','Club','Âge'], ADMIN_DATA.joueurs.map(p=>[p.name,p.position,p.club,p.age]),
+      ()=>{ ADMIN_DATA.joueurs.push({id:'new'+Date.now(), name:'Nouveau joueur', position:'Attaquant', club:CLUBS[0].name, age:20, goals:0,assists:0,apps:0,yellow:0,red:0}); render(); });
+  }
+  if(pane==='clubs'){
+    return adminTable('clubs', ['Nom','Ville','Division'], ADMIN_DATA.clubs.map(c=>[c.name,c.city,c.division]),
+      ()=>{ ADMIN_DATA.clubs.push({id:'newc'+Date.now(), name:'Nouveau club', city:'Abidjan', division:'Division 3'}); render(); });
+  }
+  if(pane==='competitions'){
+    return adminTable('competitions', ['Nom','Type'], ADMIN_DATA.competitions.map(c=>[c.name,c.type]),
+      ()=>{ ADMIN_DATA.competitions.push({name:'Nouvelle compétition', type:'Championnat régional'}); render(); });
+  }
+  if(pane==='resultats'){
+    return adminTable('resultats', ['Domicile','Score','Extérieur','Date'], ADMIN_DATA.resultats.map(r=>[r.home,r.hs+' - '+r.as,r.away,r.date]),
+      ()=>{ ADMIN_DATA.resultats.push({id:'newr'+Date.now(), home:CLUBS[0].name, hs:0, as:0, away:CLUBS[1].name, date:'2026-01-01'}); render(); });
+  }
+  if(pane==='transferts'){
+    return adminTable('transferts', ['Joueur','De','Vers','Type'], ADMIN_DATA.transferts.map(t=>[t.player,t.from,t.to,t.type]),
+      ()=>{ ADMIN_DATA.transferts.push({id:'newt'+Date.now(), player:'Nouveau joueur', from:CLUBS[0].name, to:CLUBS[1].name, type:'Prêt', date:'2026-01-01', amount:'—', status:'En négociation'}); render(); });
+  }
+  if(pane==='actualites'){
+    return adminTable('actualites', ['Titre','Catégorie','Auteur'], ADMIN_DATA.actualites.map(a=>[a.title,a.cat,a.author]),
+      ()=>{ ADMIN_DATA.actualites.push({id:'newa'+Date.now(), title:'Nouvel article', cat:ART_CATS[0], author:currentUser.email, date:'2026-01-01', summary:'', content:''}); render(); });
+  }
+  if(pane==='centres'){
+    return adminTable('centres', ['Nom','Ville','Catégories'], ADMIN_DATA.centres.map(c=>[c.name,c.city,c.categories]),
+      ()=>{ ADMIN_DATA.centres.push({id:'newce'+Date.now(), name:'Nouveau centre', city:'Abidjan', categories:'U13 - U17'}); render(); });
+  }
+  if(pane==='statistiques'){
+    return `<h3>Gestion des statistiques</h3>
+      <div class="formfield"><label>Joueur</label><select>${PLAYERS.slice(0,20).map(p=>`<option>${p.name}</option>`).join('')}</select></div>
+      <div class="formfield"><label>Buts</label><input type="number" value="0"></div>
+      <div class="formfield"><label>Passes décisives</label><input type="number" value="0"></div>
+      <button class="btn btn-orange" onclick="alert('Statistiques mises à jour (démonstration).')">Enregistrer les statistiques</button>`;
+  }
+  if(pane==='utilisateurs'){
+    return `<h3>Gestion des utilisateurs</h3>
+    <table class="admintable"><thead><tr><th>E-mail</th><th>Rôle</th><th>Actions</th></tr></thead><tbody>
+    ${ADMIN_DATA.utilisateurs.map((u,i)=>`<tr><td>${esc(u.email)}</td><td>
+      <select onchange="ADMIN_DATA.utilisateurs[${i}].role=this.value">${ROLES.map(r=>`<option ${r===u.role?'selected':''}>${r}</option>`).join('')}</select>
+    </td><td><button class="del" onclick="ADMIN_DATA.utilisateurs.splice(${i},1);render();">Supprimer</button></td></tr>`).join('')}
+    </tbody></table>`;
+  }
+  return '';
+}
+function adminTable(key, headers, rows, addFn){
+  window['add_'+key] = addFn;
+  return `<h3>${ADMIN_MENU.find(m=>m.id===key).label}</h3>
+   <button class="btn btn-orange btn-sm" style="margin-bottom:14px;" onclick="add_${key}()">+ Ajouter</button>
+   <table class="admintable"><thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}<th>Actions</th></tr></thead><tbody>
+   ${rows.length? rows.map((r,i)=>`<tr>${r.map(v=>`<td>${esc(v)}</td>`).join('')}<td><button onclick="alert('Modification (démonstration)')">Modifier</button><button class="del" onclick="if(confirm('Confirmer la suppression de cet élément ?')){ADMIN_DATA.${key}.splice(${i},1);render();}">Supprimer</button></td></tr>`).join('') : `<tr><td colspan="${headers.length+1}" style="text-align:center;color:var(--muted);padding:20px;">Aucune donnée</td></tr>`}
+   </tbody></table>`;
+}
+
+/* =========================================================
+   MODALES
+   ========================================================= */
+function showModal(innerHtml, small){
+  document.getElementById('modalRoot').innerHTML = `<div class="overlay ${small?'small-modal':''}" onclick="if(event.target===this)closeModal()"><div class="modal">${innerHtml}</div></div>`;
+}
+function closeModal(){ document.getElementById('modalRoot').innerHTML=''; }
+
+/* =========================================================
+   404 / ancre invalide (garde-fou simple)
+   ========================================================= */
+window.addEventListener('error', function(){ /* pas de blocage : gestion silencieuse pour la démo */ });
+
+/* Initial render */
+render();
+</script>
+</body>
+</html>
