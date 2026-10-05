@@ -21,7 +21,7 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: 'GPT-5.6 Luna',
+        model: 'gpt-5.6 Luna',
         messages: [
           { role: 'system', content: "Vous êtes l'assistant IA officiel d'IvoireFoot Market." },
           { role: 'user', content: message }
