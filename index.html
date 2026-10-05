@@ -1799,7 +1799,6 @@ function renderAdmin(){
     <div class="sechead"><div><h2>Espace Administration</h2><div class="sub">Connecté en tant que ${esc(currentUser.email)} (${currentUser.role})</div></div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;"><button class="btn btn-outline btn-sm" onclick="goSection('accueil')">Voir le site</button><button class="btn btn-outline btn-sm" onclick="(async()=>{ if(supa) await supa.auth.signOut(); currentUser=null; goSection('adminlogin'); })()">Se déconnecter</button></div>
     </div>
-    <div class="demo-note">Les ajouts, modifications et suppressions ci-dessous sont appliqués en mémoire pour cette session de démonstration uniquement.</div>
     <div class="adminlayout">
       <div class="adminmenu">${ADMIN_MENU.map(m=>`<button class="${adminPane===m.id?'active':''}" data-id="${m.id}">${m.label}</button>`).join('')}</div>
       <div class="adminpane" id="adminPaneBody">${renderAdminPane(adminPane)}</div>
